@@ -17,10 +17,11 @@
   		projectId: "ventilation-registry",
   		storageBucket: "ventilation-registry.firebasestorage.app",
   		messagingSenderId: "246007378247",
-  		appId: "1:246007378247:web:0f8b2d5f92e47c04b95c62"
-    }
+  		appId: "1:246007378247:web:0f8b2d5f92e47c04b95c62"    }
   };
 </script>
+<!-- Your Firebase settings live in config.js next to this file, so updates to index.html never overwrite them. -->
+<script src="config.js"></script>
 <style>/*
 VOICE: clinical and calm, like a well-run ICU flowsheet; dense where clinicians read numbers, quiet elsewhere.
 IDEA: the bedside flowsheet and monitor strip: patient cards are bed cards, trends read like a monitor, the table is the paper flowsheet.
@@ -37,6 +38,7 @@ LAYOUT: sticky top bar, content to 1240px, cards in an auto grid, sheets slide u
 --ok-ink:light-dark(#00733f,#5fd49a);--focus:0 0 0 3px light-dark(rgba(10,92,255,.35),rgba(122,167,255,.45))}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:clip}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -176,7 +178,8 @@ fieldset.f{border:0;padding:0;margin:0}
 .opts label:has(input:checked){background:var(--ink);color:var(--card);border-color:var(--ink)}
 .opts label:has(input:focus-visible){box-shadow:var(--focus)}
 .checks label{display:flex;gap:10px;align-items:center;min-height:40px;font-weight:500}
-.checks input{width:20px;height:20px}
+.checks input[type=checkbox]{width:20px;height:20px;flex:none}
+.checks .in{margin-top:6px}
 .sec{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
 .sec>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:12px 14px;cursor:pointer;font-weight:700;background:var(--soft);min-height:48px}
 .sec>summary::-webkit-details-marker{display:none}
